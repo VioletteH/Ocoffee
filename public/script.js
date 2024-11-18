@@ -1,8 +1,6 @@
-let menuOpenElement = document.querySelector(".menu_open");
-let headerElement = document.querySelector("header");
+let menuOpenElement = document.querySelector(".menu_burger");
+let menuUlElement = document.querySelector(".menu_ul");
 
 menuOpenElement.onclick = function(){
-    let divElement = document.createElement("div");
-    headerElement.append(divElement);
-    divElement.classList.add("menu_div-mobile");
+    menuUlElement.classList.toggle("active");
     }
