@@ -1,0 +1,211 @@
+html{
+    height: 100%;
+    box-sizing: border-box;
+}
+body{
+    --bg-primary: #f7dbb9;
+    --bg-secondary: #3e1f04;
+    font-family: Roboto, sans-serif;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* HEADER */
+
+header{
+    padding:1rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:5px;
+}
+
+.logo{
+    height:80px;
+    width: 80px;
+}
+
+.menu_ul{
+    display:flex;
+    justify-content: center;
+    padding:0 20px;
+    gap:30px;
+}
+
+.menu_li{
+    list-style: none;
+}
+
+.menu_a{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--bg-secondary);
+    text-decoration: none;
+}
+
+.menu_open{
+    display:none;
+}
+
+.menu_open_img{
+    width: 80px;
+    height: 80px;
+}
+
+/* MAIN */
+
+main{
+    padding: 0 1rem 1rem 1rem;
+}
+
+/* ACCUEIL */
+
+/* About */
+
+.about{
+    display:flex;
+    justify-content: center;
+    gap : 50px;
+    padding:1rem;
+}
+
+.about_article{
+    padding: 1rem;
+    margin:auto;
+}
+
+.about_article_h1{
+    color: var(--bg-secondary);
+    font-size: 2rem;
+}
+.about_article_p{
+    padding : 1rem 0;
+}
+
+.about_article_btn{
+    color: var(--bg-primary);
+    font-weight:bold;
+    background-color: var(--bg-secondary);
+    border: none;
+    border-radius:10px;
+    padding: 0 0.8rem;
+}
+
+.about_image{
+    height:300px;
+}
+
+/* Nouveautés */
+
+.news_h2{
+    margin: auto;
+    text-align: center;
+    color: var(--bg-secondary);
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.news_wrapper{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+.news_card{
+    padding: 1rem;
+    background-image:url(../public/img/coffees/100955890.png);
+    text-align: center;
+    width : 300px;
+}
+
+.news_card_h3{
+    color: var(--bg-secondary);
+}
+.news_card_p{
+    padding : 1rem 0;
+}
+
+.news_card_btn{
+    color: var(--bg-primary);
+    font-weight:bold;
+    background-color: var(--bg-secondary);
+    border: none;
+    border-radius:10px;
+    padding: 0 0.8rem;
+}
+
+/* CATALOGUE */
+
+/* Header */
+
+.catalogue_header{
+    position: relative;
+    margin : auto;
+    width: 800px;
+}
+
+.catalogue_header_h1{
+    position: absolute;
+    top: 40%;
+    left:40%;
+    text-align:center;
+    color: var(--bg-secondary);
+    font-size: 2rem;
+}
+
+.catalogue_header_img{
+    width: 100%;
+    margin: auto;
+    opacity:0.75;
+}
+
+/* Content */
+
+.catalogue_content{
+    display: grid;
+    padding: 3rem 1rem;
+}
+
+.catalogue_content_form{
+    padding-right: 1rem; 
+    position : relative;
+}
+
+.catalogue_content_form_select{
+    position : absolute;
+    right : 1rem;
+    top : -2rem;
+}
+
+.catalogue_button{
+    color: var(--bg-primary);
+    font-weight:bold;
+    background-color: var(--bg-secondary);
+    border: none;
+    border-radius:10px;
+    padding: 0 0.8rem;
+    margin: auto;
+}
+
+/* FOOTER */
+
+footer{
+    padding: 20px;
+    background-color: var(--bg-secondary);
+}
+
+footer p{
+    text-align: center;
+    color: var(--bg-primary);
+}
+
+@media screen and (max-width:500px){
+    .menu_open{
+        display:contents;
+    }
+    .menu_ul{
+        display:none;
+    }
+}
