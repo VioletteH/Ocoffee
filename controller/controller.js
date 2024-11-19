@@ -1,19 +1,51 @@
+import dataMapper from '../models/dataMapper.js';
+
 const mainController = {
 
-    homePage(req, res){
-        res.render('index');
+    async homePage(req, res){
+        try{
+            const products = await dataMapper.getThreeProducts();
+            console.log(products[0]);
+            res.render('index', {products});
+          }      
+          catch(error){
+             console.error(error);
+             res.status(500).send('Server Error'); 
+          };         
     },
 
-    aProposPage(req, res){
-        res.render('about');
+    async aProposPage(req, res){
+        try{
+            const products = await dataMapper.getProducts();
+            res.render('about', {products});
+          }     
+          catch(error){
+             console.error(error);
+             res.status(500).send('Server Error'); 
+          };  
     },
 
-    cataloguePage(req, res){
-        res.render('catalogue');
+    async cataloguePage(req, res){
+        try{
+            const products = await dataMapper.getProducts();
+            res.render('catalogue', {products});
+          }      
+          catch(error){
+             console.error(error);
+             res.status(500).send('Server Error'); 
+          };  
       },
 
-    produitPage(req, res){
-        res.render('produit');
+    async produitPage(req, res){
+        try{
+            const productId = Number(req.params.id); 
+            const product = await dataMapper.getOneProduct(productId);
+            res.render('produit', {product});
+          }      
+          catch(error){
+             console.error(error);
+             res.status(500).send('Server Error'); 
+          };  
     },
   };
   
