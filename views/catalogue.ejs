@@ -1,0 +1,37 @@
+<%- include ('./partials/header.ejs') %>
+    <main>
+        <section class="catalogue_header">
+            <h1 class="catalogue_header_h1">Notre catalogue</h1>
+        </section>
+        <section class="catalogue_content">
+            <div class="news_wrapper">
+                <form class="catalogue_content_form">
+                    <select class="catalogue_content_form_select">
+                        <option>Expresso</option>
+                        <option>Columbian</option>
+                        <option>Ethiopian Yirgacheffe</option>
+                    </select>
+                </form>
+                <div class="news_card">
+                    <img class="news_card_img" src="img/coffees/100955890.png">
+                    <h3 class="news_card_h3">Expresso</h3>
+                    <p class="news_card_p">Café fort et concentré préparé en faisant passer de l'eau chaude à travers du café finement moulu.</p>
+                    <a class="news_card_a" href="/produit">Découvrir</a>
+                </div>
+                <div class="news_card">
+                    <img class="news_card_img" src="img/coffees/100955894.png">
+                    <h3 class="news_card_h3">Columbian</h3>
+                    <p class="news_card_p">Café moyennement corsé avec une acidité vive et une saveur riche.</p>
+                    <a class="news_card_a" href="/produit">Découvrir</a>
+                </div>
+                <div class="news_card">
+                    <img class="news_card_img" src="img/coffees/105589090.png">
+                    <h3 class="news_card_h3">Ethiopian Yirgacheffe</h3>
+                    <p class="news_card_p">Réputé pour son arôme floral, son acidité vive et ses notes de saveur citronnée.</p>
+                    <a class="news_card_a" href="/produit">Découvrir</a>
+                </div>
+                <button class="catalogue_button" type="submit">Voir tout</button>
+            </div>
+        </section>
+    </main>
+<%- include ('./partials/footer.ejs') %>
