@@ -13,7 +13,7 @@ const dataMapper = {
     },
 
     async getOneProduct(id){
-        const result = await client.query(`SELECT * FROM "product" WHERE "id" = $1;`, [id]);
+        const result = await client.query(`SELECT * FROM "product" JOIN "origine" ON product.origine_id = origine.id JOIN "type" ON product.type_id = type.id WHERE "reference" = $1;`, [id]);
         return result.rows[0]; 
     },
 

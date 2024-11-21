@@ -4,7 +4,7 @@
             <article class="about_article">
                 <h1 class="about_article_h1">OCoffee, des cafés O' de gamme</h1>
                 <p class="about_article_p">Avec une expertise approfondie et un amour profond pour le café, Jean et Jacques Pepper ont créé un espace où le café est célébré comme une expérience raffinée et inspirante.</p>
-                <a class="about_article_a" href="/catalogue">Voir le catalogue</a>
+                <a class="btn" href="/catalogue">Voir le catalogue</a>
             </article>
             <img class="about_image" src="img/about.jpg">
         </section>
@@ -16,7 +16,7 @@
                     <img class="news_card_img" src="img/coffees/<%= product.reference %>.png">
                     <h3 class="news_card_h3"><%= product.name %></h3>
                     <p class="news_card_p"><%= product.description %></p>
-                    <a class="news_card_a" href="/produit/<%= product.reference %>">Découvrir</a>
+                    <a class="btn little-btn news_card_a" href="/produit/<%= product.reference %>">Découvrir</a>
                 </div>
                 <% } %>
             </div>

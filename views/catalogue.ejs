@@ -5,32 +5,25 @@
         </section>
         <section class="catalogue_content">
             <div class="news_wrapper">
-                <form class="catalogue_content_form">
-                    <select class="catalogue_content_form_select">
-                        <option>Expresso</option>
-                        <option>Columbian</option>
-                        <option>Ethiopian Yirgacheffe</option>
+                <form class="catalogue_content_form" method="GET">
+                    <select class="catalogue_content_form_select" name="reference">
+                        <option value="">--Tous les produits--</option>
+                        <% for(let product of products){ %>
+                        <option value="<%= product.reference %>"><%= product.name %></option>
+                        <% } %>
                     </select>
+                    <button class="btn little-btn" type="submit">Filtrer</button>
                 </form>
+                <% for(let product of filteredProducts){ %>
                 <div class="news_card">
-                    <img class="news_card_img" src="img/coffees/100955890.png">
-                    <h3 class="news_card_h3">Expresso</h3>
-                    <p class="news_card_p">Café fort et concentré préparé en faisant passer de l'eau chaude à travers du café finement moulu.</p>
-                    <a class="news_card_a" href="/produit">Découvrir</a>
+                    <img class="news_card_img" src="img/coffees/<%= product.reference %>.png">
+                    <h3 class="news_card_h3"><%= product.name %></h3>
+                    <p class="news_card_p"><%= product.description %></p>
+                    <a class="btn little-btn news_card_a" href="/produit/<%= product.reference %>">Découvrir</a>
                 </div>
-                <div class="news_card">
-                    <img class="news_card_img" src="img/coffees/100955894.png">
-                    <h3 class="news_card_h3">Columbian</h3>
-                    <p class="news_card_p">Café moyennement corsé avec une acidité vive et une saveur riche.</p>
-                    <a class="news_card_a" href="/produit">Découvrir</a>
-                </div>
-                <div class="news_card">
-                    <img class="news_card_img" src="img/coffees/105589090.png">
-                    <h3 class="news_card_h3">Ethiopian Yirgacheffe</h3>
-                    <p class="news_card_p">Réputé pour son arôme floral, son acidité vive et ses notes de saveur citronnée.</p>
-                    <a class="news_card_a" href="/produit">Découvrir</a>
-                </div>
-                <button class="catalogue_button" type="submit">Voir tout</button>
+                <% } %>
+                
+                <button class="btn catalogue_button" type="submit">Voir tout</button>
             </div>
         </section>
     </main>
