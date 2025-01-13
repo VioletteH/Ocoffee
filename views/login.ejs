@@ -1,0 +1,17 @@
+<%- include ('./partials/header.ejs') %>
+
+<main>
+    <h1 class="form_title">Connexion</h1>
+    <form id="login_form" action="/login" method="POST">
+        <label for="login">Identifiant</label>
+        <input type="text" id="login" name="login">
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password">
+        <button type="submit" class="btn">Se connecter</button>
+    </form>
+    <% if (error) { %>
+        <p class="erreur"><%= error %></p>
+    <% } %>
+</main>
+
+<%- include ('./partials/footer.ejs') %>

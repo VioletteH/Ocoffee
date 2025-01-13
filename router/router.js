@@ -1,14 +1,19 @@
 import express from "express";
+import mainController from "../controller/mainController.js";
+import adminController from "../controller/adminController.js";
 
-// CONTROLER
-import mainController from "../controller/controller.js";
+import upload from '../middlewares/multerConfig.js';
 
-// ROUTER
 const router = express.Router();
 
 router.get("/", mainController.homePage);
 router.get("/a-propos", mainController.aProposPage);
 router.get("/catalogue", mainController.cataloguePage);
 router.get("/produit/:id", mainController.produitPage);
+router.get("/contact", mainController.contactPage);
+router.get("/login", adminController.loginPage);
+router.post("/login", adminController.loginPost);
+router.get("/page-admin", adminController.adminPage);
+router.post("/page-admin", upload.single('image'), adminController.adminPost);
 
 export default router;

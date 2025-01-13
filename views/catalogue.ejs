@@ -4,7 +4,7 @@
             <h1 class="catalogue_header_h1">Notre catalogue</h1>
         </section>
         <section class="catalogue_content">
-            <div class="news_wrapper">
+            <div class="card_wrapper">
                 <form class="catalogue_content_form" method="GET">
                     <select class="catalogue_content_form_select" name="reference">
                         <option value="">--Tous les produits--</option>
@@ -14,16 +14,17 @@
                     </select>
                     <button class="btn little-btn" type="submit">Filtrer</button>
                 </form>
+                
                 <% for(let product of filteredProducts){ %>
-                <div class="news_card">
-                    <img class="news_card_img" src="img/coffees/<%= product.reference %>.png">
-                    <h3 class="news_card_h3"><%= product.name %></h3>
-                    <p class="news_card_p"><%= product.description %></p>
-                    <a class="btn little-btn news_card_a" href="/produit/<%= product.reference %>">Découvrir</a>
+                <div class="card">
+                    <img class="card_img" src="img/coffees/<%= product.reference %>.png">
+                    <h3 class="card_h3"><%= product.name %></h3>
+                    <p class="card_p"><%= product.description %></p>
+                    <a class="btn little-btn card_a" href="/produit/<%= product.reference %>">Découvrir</a>
                 </div>
                 <% } %>
                 
-                <button class="btn catalogue_button" type="submit">Voir tout</button>
+                <a href="/catalogue" class="btn catalogue_button" type="submit">Voir tout</a>
             </div>
         </section>
     </main>

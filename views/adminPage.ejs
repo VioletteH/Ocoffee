@@ -1,0 +1,72 @@
+<%- include ('./partials/header.ejs') %>
+
+<main>
+        <article class="infos_article">
+            <h1 class="form_title">Ajouter un produit</h1>
+            <form id="add_product_form" action="/page-admin" method="POST" enctype="multipart/form-data">
+    
+                <label for="reference">Référence</label>
+                <input type="text" id="reference" name="reference">
+    
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name">
+    
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description">
+    
+                <label for="origin">Origine</label>
+                <select name="origin" id="origin">
+                    <option value="">--Choisissez une origine--</option>    
+                    <% for (let origin of origins) { %>          
+                        <option value="<%= origin.country %>"><%= origin.country %></option>
+                    <% } %>
+                </select>
+    
+                <label for="price">Prix</label>
+                <div style="position: relative">
+                    <span style="position: absolute; right: 10px; top: 40%; transform: translateY(-50%)">€</span>
+                    <input type="number" id="price" name="price" style="padding-left: 20px;">
+                </div>
+    
+                <label for="type">Type</label>
+                <select name="type" id="type">
+                    <option value="">--Choisissez un type--</option>    
+                    <% for (let type of types) { %>          
+                        <option value="<%= type.strenght %>"><%= type.strenght %></option>
+                    <% } %>
+                </select>
+    
+                <label for="availability">Disponibilité</label>
+                <select name="availability" id="availability">         
+                    <option value="true">oui</option>
+                    <option value="false">non</option>
+                </select>
+                
+                <label for="image">Image :</label>
+                <input type="file" name="image" id="image" accept="image/*">
+    
+                <button type="submit" class="btn">Ajouter</button>
+    
+            </form>
+            <% if (typeof error !== 'undefined') { %>
+                <p class="erreur"><%= error %></p>
+            <% } %>
+        </article>
+    
+        <article class="infos_article">
+            <h1 class="form_title">Supprimer un produit</h1>
+            <form id="delete_product_form" action="/page-admin" method="POST">
+                <input type="hidden" name="action" value="delete">
+                <label for="reference_to_delete">Réference</label>
+                <select name="reference_to_delete" id="reference_to_delete">         
+                    <% for (let product of products) { %>          
+                        <option value="<%= product.reference %>"><%= product.reference %> - <%= product.name %></option>
+                    <% } %>
+                </select>
+                <button type="submit" class="btn">Supprimer</button>
+            </form>
+        </article>
+
+</main>
+
+<%- include ('./partials/footer.ejs') %>

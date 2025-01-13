@@ -12,22 +12,19 @@ body{
 
 h1{
     color: var(--bg-secondary);
-    font-size: 2 rem;
+    font-size: 2rem;
 }
 
-h1{
+h2{
     color: var(--bg-secondary);
-    font-size: 1.5 rem;
+    font-size: 1.5rem;
 }
 
-h1{
-    color: var(--bg-secondary);
-    font-size: 1 rem;
-}
 p{
     text-align : justify;
     padding: 1rem 0;
 }
+
 .btn{
     color: var(--bg-primary);
     font-weight:bold;
@@ -112,12 +109,13 @@ header{
     background-color: var(--color-compl-3);
     padding: 0 3rem;
 }
-.news_h2{
+
+.card_title{
     text-align: center;
-    padding: 1rem;
+    padding-top: 1rem;
 }
 
-.news_wrapper{
+.card_wrapper{
     padding: 1rem 0;
     display: flex;
     flex-wrap: wrap;
@@ -126,7 +124,7 @@ header{
     position : relative;
 }
 
-.news_card{
+.card{
     text-align: center;
     width : 300px;
     height: 400px;
@@ -135,15 +133,11 @@ header{
     border-radius: 10px;
 }
 
-/*.news_card:nth-of-type(n+4){
-    display: none;
-}*/
-
 .hidden{
     display: none;
 }
 
-.news_card_img{
+.card_img{
     width : 300px;
     height : 150px;
     object-fit: cover;
@@ -151,15 +145,16 @@ header{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-.news_card_h3{
+
+.card_h3{
     padding-top : 1rem;
 }
 
-.news_card_p{
+.card_p{
     padding : 1rem 1rem;
 }
 
-.news_card_a{
+.card_a{
     position : absolute;
     bottom: 30px; 
     left: 100px;
@@ -255,6 +250,43 @@ header{
     height:300px;
 }
 
+#map { 
+    width: 100%;
+    height: 180px; 
+}
+
+/* CONTACT & LOGIN */
+
+#contact_form, #login_form, #add_product_form, #delete_product_form{
+    width: 100%; 
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f7f7f7;  
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form_title{
+    text-align: center;
+    padding-top: 1rem;
+}
+
+label {
+    display: block;             
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea, #add_product_form select, #delete_product_form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+  
 /* ERREUR */
 
 .erreur{
@@ -262,6 +294,7 @@ header{
     justify-content: center;
     gap : 50px;
     padding:1rem;
+    color:red;
 }
 
 .erreur_article{
@@ -317,7 +350,8 @@ footer p{
     .about{
         flex-wrap: wrap;
     }
-    .news_wrapper{
+    
+    .card_wrapper{
         flex-wrap: wrap;
         justify-content: center;
     }
