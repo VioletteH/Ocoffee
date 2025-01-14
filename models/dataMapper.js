@@ -13,7 +13,11 @@ const dataMapper = {
     },
 
     async getOneProduct(id){
-        const result = await client.query(`SELECT * FROM "product" JOIN "origine" ON product.origine_id = origine.id JOIN "type" ON product.type_id = type.id WHERE "reference" = $1;`, [id]);
+        const result = await client.query(`
+            SELECT * FROM "product" 
+            JOIN "origine" ON product.origine_id = origine.id 
+            JOIN "type" ON product.type_id = type.id 
+            WHERE "reference" = $1;`, [id]);
         return result.rows[0]; 
     },
 
@@ -41,7 +45,9 @@ const dataMapper = {
         const typeId = typeResult.rows[0].id;
     
         const result = await client.query(
-            `INSERT INTO "product" ("reference", "name", "description", "origine_id", "price", "type_id", "availability") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *;`, [reference, name, description, originId, price, typeId, availability]
+            `INSERT INTO "product" ("reference", "name", "description", "origine_id", "price", "type_id", "availability") 
+            VALUES ($1, $2, $3, $4, $5, $6, $7) 
+            RETURNING *;`, [reference, name, description, originId, price, typeId, availability]
         );
         return result.rows[0];  
     },
