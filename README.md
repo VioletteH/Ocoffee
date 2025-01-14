@@ -1,5 +1,7 @@
 # O'Coffee
 
+Projet sur Render : https://ocoffee-dkp5.onrender.com/
+
 Objectif du projet : 
 réaliser un site web en fonction d'une demande client
 
@@ -30,4 +32,4 @@ Ce qui a été réalisé sur ce projet :
 - Mise en place d'un système d'authentification / de session
 - Développement d'une page d'administration pour ajouter ou supprimer un produit (accessible avec l'identifiant "admin")
 - Intégration d'un champ pour ajouter une photo avec Multer
-
+- Mettre le projet en production avec Render
