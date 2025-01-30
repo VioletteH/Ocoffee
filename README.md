@@ -1,6 +1,7 @@
 # O'Coffee
 
 Projet sur Render : https://ocoffee-dkp5.onrender.com/
+> attention BDD n'est plus disponible sur Render pour l'instant
 
 Objectif du projet : 
 réaliser un site web en fonction d'une demande client
