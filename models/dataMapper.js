@@ -4,6 +4,7 @@ const dataMapper = {
 
     async getProducts(){
         const result = await client.query(`SELECT * FROM product;`);
+        console.log("Produits retournés :", result.rows.length);
         return result.rows;    
     },
 
@@ -31,10 +32,20 @@ const dataMapper = {
         return result.rows; 
     },
 
-    async getProductByReference(reference) {
-        const result = await client.query(`SELECT * FROM "product" WHERE "reference" = $1`, [reference]);
-        return result.rows[0]; 
+    async getProductByType(strenght) {
+        const result = await client.query(`
+            SELECT p.*,  t.strenght
+            FROM "product" p
+            JOIN "type" t ON p.type_id = t.id
+            WHERE t.strenght = $1;
+        `, [strenght]);
+        return result.rows;
     },
+
+    // async getProductByReference(reference) {
+    //     const result = await client.query(`SELECT * FROM "product" WHERE "reference" = $1`, [reference]);
+    //     return result.rows[0]; 
+    // },
 
     async addProduct({ reference, name, description, origin, price, type, availability }) {
         

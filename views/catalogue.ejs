@@ -8,14 +8,14 @@
                 <form class="catalogue_content_form" method="GET">
                     <select class="catalogue_content_form_select" name="reference">
                         <option value="">--Tous les produits--</option>
-                        <% for(let product of products){ %>
-                        <option value="<%= product.reference %>"><%= product.name %></option>
+                        <% for(let type of types){ %>
+                            <option value="<%= type.strenght %>" <%= selectedType === type.strenght ? 'selected' : '' %>><%= type.strenght %></option>
                         <% } %>
                     </select>
                     <button class="btn little-btn" type="submit">Filtrer</button>
                 </form>
                 
-                <% for(let product of filteredProducts){ %>
+                <% for(let product of products){ %>
                 <div class="card">
                     <img class="card_img" src="img/coffees/<%= product.reference %>.png">
                     <h3 class="card_h3"><%= product.name %></h3>
@@ -24,7 +24,7 @@
                 </div>
                 <% } %>
                 
-                <a href="/catalogue" class="btn catalogue_button" type="submit">Voir tout</a>
+                <!-- <a href="/catalogue?showAll=true" class="btn catalogue_button">Voir tout</a> -->
             </div>
         </section>
     </main>

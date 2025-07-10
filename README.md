@@ -31,6 +31,6 @@ Ce qui a été réalisé sur ce projet :
 - Intégration d'une carte avec Leaflet
 - Création d'un formulaire de contact avec EmailJS
 - Mise en place d'un système d'authentification / de session
-- Développement d'une page d'administration pour ajouter ou supprimer un produit (accessible avec l'identifiant "admin")
+- Développement d'une page d'administration pour ajouter ou supprimer un produit (accessible avec l'identifiant "admin" et le mot de passe "admin")
 - Intégration d'un champ pour ajouter une photo avec Multer
 - Mettre le projet en production avec Render

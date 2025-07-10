@@ -24,15 +24,26 @@ const mainController = {
     },
 
     async cataloguePage(req, res){
-        const selectedProduct = req.query.reference; 
-        const products = await dataMapper.getProducts();
-        const filteredProducts = products.filter(product => product.reference == selectedProduct);
+        try{
+            const allTypes = await dataMapper.getTypes();
+            const selectedType = req.query.reference; 
 
-        if (selectedProduct) {
-            res.render('catalogue', { products : products, filteredProducts : filteredProducts});
-        } else {
-            res.render('catalogue', { products : products, filteredProducts : products});
-        }
+            let products;
+            if (selectedType && selectedType !== "") {
+                products = await dataMapper.getProductByType(selectedType);
+            } else {
+                products = await dataMapper.getProducts();
+            }
+
+            res.render('catalogue', { 
+                products, 
+                types : allTypes,
+                selectedType
+            });
+        }catch(error){
+            console.error(error);
+            res.status(500).send('Server Error'); 
+        };  
     },
 
     async productPage(req, res){

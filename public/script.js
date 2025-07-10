@@ -7,24 +7,24 @@ menuOpenElement.addEventListener('click', function(){
     menuNavElement.classList.toggle("active");
     });
 
-// BOUTON VOIR TOUT
+// BOUTON VOIR LE CATALOGUE
 
-if (window.location.pathname.includes("/catalogue")) {
+// if (window.location.pathname.includes("/catalogue")) {
 
-  let catalogueBtnElement = document.querySelector(".catalogue_button");
-  let cardsElement = document.querySelectorAll(".card");
+//   let catalogueBtnElement = document.querySelector(".catalogue_button");
+//   let cardsElement = document.querySelectorAll(".card");
 
-  for (let i = 3; i < cardsElement.length; i++) {
-      cardsElement[i].classList.add("hidden");
-    }
+//   for (let i = 3; i < cardsElement.length; i++) {
+//       cardsElement[i].classList.add("hidden");
+//     }
 
-  catalogueBtnElement.addEventListener('click', function(){
-      for (let i = 3; i < cardsElement.length; i++) {
-        cardsElement[i].classList.remove("hidden");
-        }
-        catalogueBtnElement.classList.add("hidden");
-      });
-};
+//   catalogueBtnElement.addEventListener('click', function(){
+//       for (let i = 3; i < cardsElement.length; i++) {
+//         cardsElement[i].classList.remove("hidden");
+//         }
+//         catalogueBtnElement.classList.add("hidden");
+//       });
+// };
 
 // MAP
 

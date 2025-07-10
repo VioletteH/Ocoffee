@@ -50,7 +50,7 @@ const adminController = {
         try{
             if (req.body.action === 'delete') {
                 const referenceToDelete = req.body['reference_to_delete'];
-                const deletedProduct = await dataMapper.deleteProduct(referenceToDelete);
+                await dataMapper.deleteProduct(referenceToDelete);
                 return res.redirect('/page-admin');
             }
 
@@ -67,7 +67,7 @@ const adminController = {
                 return res.render('adminPage', { error: errorMessage, origins, types, products});
              }
 
-            const product = await dataMapper.addProduct({reference, name, description, origin, price, type, availability});
+            const product = await dataMapper.addProduct({reference, name, description, origin, price, type, availability, image});
             return res.redirect(`/produit/${product.reference}`);
         }      
         catch(error){
