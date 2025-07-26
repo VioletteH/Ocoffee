@@ -1,3 +1,5 @@
+BEGIN;
+
 CREATE TABLE IF NOT EXISTS "product" (
   "reference" INT NOT NULL PRIMARY KEY,
   "name" VARCHAR(128), 
@@ -62,21 +64,4 @@ INSERT INTO "product" ("reference", "name", "description", "origine_id", "price"
 (958090105, 'Hawaiian Kona', 'Café rare au goût riche, une acidité douce et des nuances subtiles.', 15, 55.75, 4, FALSE),
 (691550753, 'Nicaraguan Maragogipe', 'Café avec des notes de fruits, une acidité vive et un corps plein.', 16, 28.60, 3, FALSE);
 
-
-RESULTS
-
- reference |          name          |                                            description                                             | origine_id | price | type_id | availability 
------------+------------------------+----------------------------------------------------------------------------------------------------+------------+-------+---------+--------------
- 100955890 | Espresso               | Café fort et concentré préparé en faisant passer de l'eau chaude à travers du café finement moulu. |          1 | 20.99 |       1 | t
- 100955894 | Columbian              | Café moyennement corsé avec une acidité vive et une saveur riche.                                  |          2 | 18.75 |       2 | t
- 105589090 | Ethiopian Yirgacheffe  | Réputé pour son arôme floral, son acidité vive et ses notes de saveur citronnée.                   |          3 | 22.50 |       3 | t
-
-
-ocoffee=> \dt
-         List of relations
- Schema |  Name   | Type  |  Owner  
---------+---------+-------+---------
- public | origine | table | ocoffee
- public | product | table | ocoffee
- public | type    | table | ocoffee
-(3 rows)
+COMMIT;
